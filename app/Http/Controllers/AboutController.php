@@ -15,4 +15,9 @@ class AboutController extends Controller
     {
         return "redirect()->route('about.index')";
     }
+
+    public function test()
+    {
+        return "has test";
+    }
 }

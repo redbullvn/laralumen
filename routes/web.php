@@ -15,5 +15,19 @@ $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 
-$router->get('about', ['uses'=> 'AboutController@index', 'as'=> 'about.index']);
+//$router->get('about', ['uses'=> 'AboutController@index', 'as'=> 'about.index']);
 $router->get('home', ['uses'=> 'AboutController@home', 'as'=> 'about.home']);
+
+// group for API
+$router->group(['prefix' => 'api'], function() use ($router) {
+    // group for modules
+    $router->group(['prefix' => 'c'], function () use ($router) {
+        $router->get('about', ['uses'=> 'AboutController@test', 'as'=> 'about.test']);
+    });
+    
+    
+    
+    
+    
+    $router->get('about', ['uses'=> 'AboutController@index', 'as'=> 'about.index']);
+});
