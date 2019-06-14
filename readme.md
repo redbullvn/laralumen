@@ -10,3 +10,7 @@ $ composer require flipbox/lumen-generator
 2. $app->register(Flipbox\LumenGenerator\LumenGeneratorServiceProvider::class);
 ```
 ### start
+```php
+    #@create Users Table
+php artisan make:migration create_users_table --create=users
+```
