@@ -16,7 +16,8 @@ class ProductController extends Controller
 
     public function index()
     {
-        return $this->_products->all();// return all products
+        $this->_products->all();// return all products
+        return view('see');
     }
 
     public function show($id)
