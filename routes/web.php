@@ -17,6 +17,8 @@ $router->get('/', function () use ($router) {
 
 //$router->get('about', ['uses'=> 'AboutController@index', 'as'=> 'about.index']);
 $router->get('home', ['uses'=> 'AboutController@home', 'as'=> 'about.home']);
+$router->get('see', ['uses'=> 'AboutController@see', 'as'=> 'about.see']);// debug app
+$router->get('ps', ['uses'=> 'ProductController@index', 'as'=> 'p.index']);
 
 // group for API
 $router->group(['prefix' => 'api'], function() use ($router) {

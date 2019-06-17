@@ -20,4 +20,9 @@ class AboutController extends Controller
     {
         return "has test";
     }
+
+    public function see()
+    {
+        dd(app());
+    }
 }

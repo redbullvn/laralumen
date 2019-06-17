@@ -80,6 +80,15 @@ $app->register(App\Providers\AppServiceProvider::class);
 // $app->register(App\Providers\AuthServiceProvider::class);
 // $app->register(App\Providers\EventServiceProvider::class);
 
+#@@ 
+/*
+|--------------------------------------------------------------------------
+| My Register Service Providers
+|--------------------------------------------------------------------------
+|
+*/
+$app->register(App\Providers\ProductServiceProvider::class);
+
 /*
 |--------------------------------------------------------------------------
 | Load The Application Routes
