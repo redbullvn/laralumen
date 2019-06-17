@@ -20,7 +20,7 @@ class CategoryTableSeeder extends Seeder
             ['name' => 'Category 3', 'slug' => 'category-3', 'c_sort' => 3, 'created_at' => $now, 'updated_at' => $now],
             ['name' => 'Category 4', 'slug' => 'category-4', 'c_sort' => 5, 'created_at' => $now, 'updated_at' => $now],
             ['name' => 'Category 5', 'slug' => 'category-5', 'c_sort' => 4, 'created_at' => $now, 'updated_at' => $now],
-            ['name' => 'Category 8', 'slug' => 'category-8', 'c_sort' => 6, 'created_at' => $now, 'updated_at' => $now],
+            ['name' => 'Category 6', 'slug' => 'category-6', 'c_sort' => 6, 'created_at' => $now, 'updated_at' => $now],
             
         ];
 

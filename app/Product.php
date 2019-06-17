@@ -14,4 +14,9 @@ class Product extends Model
      * @var array
      */
     protected $hidden = ['created_at'];
+
+    public function category()
+    {
+        return $this->belongsTo('App\Category');
+    }
 }
