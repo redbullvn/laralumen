@@ -22,6 +22,9 @@ $router->get('ps', ['uses'=> 'ProductController@index', 'as'=> 'p.index']);
 
 // group for API
 $router->group(['prefix' => 'api'], function() use ($router) {
+    // group for modules PRODUCTS
+    $router->get('products', ['uses'=> 'ProductController@index', 'as'=> 'product.index']);
+
     // group for modules
     $router->group(['prefix' => 'c'], function () use ($router) {
         $router->get('about', ['uses'=> 'AboutController@test', 'as'=> 'about.test']);

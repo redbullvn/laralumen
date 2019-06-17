@@ -2,6 +2,9 @@
 
 use Illuminate\Database\Seeder;
 use Carbon\Carbon;
+//or 
+#use Illuminate\Support\Carbon;
+
 use App\Product;
 
 class ProductTableSeeder extends Seeder

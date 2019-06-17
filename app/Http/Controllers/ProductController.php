@@ -16,11 +16,11 @@ class ProductController extends Controller
 
     public function index()
     {
-        dd($this->_products->all());// return all products
+        return $this->_products->all();// return all products
     }
 
-    public function show()
+    public function show($id)
     {
-        
+        return $this->_products->show($id);
     }
 }

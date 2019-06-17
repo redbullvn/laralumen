@@ -3,17 +3,17 @@
 namespace App\Services;
 
 use App\Contracts\IProduct;
-
+use App\Product;
 class ProductService implements IProduct
 {
     
     public function all()
     {
-        return 'all products';
+        return Product::all();
     }
 
-    public function show()
+    public function show($id)
     {
-        
+        return Product::find($id);
     }
 }
