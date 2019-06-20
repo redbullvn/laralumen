@@ -15,6 +15,9 @@ class Product extends Model
      */
     protected $hidden = ['created_at'];
 
+    # Where fields enable for insert 
+    //protected $fillable = [];
+
     public function category()
     {
         return $this->belongsTo('App\Category');

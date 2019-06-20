@@ -61,9 +61,10 @@ $app->singleton(
 //     App\Http\Middleware\ExampleMiddleware::class
 // ]);
 
-// $app->routeMiddleware([
-//     'auth' => App\Http\Middleware\Authenticate::class,
-// ]);
+$app->routeMiddleware([
+    // 'auth' => App\Http\Middleware\Authenticate::class,
+    'api-json' => App\Http\Middleware\JsonRequestMiddleware::class
+]);
 if (env('APP_DEBUG')) {
  $app->register(Barryvdh\Debugbar\LumenServiceProvider::class);
 }

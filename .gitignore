@@ -4,3 +4,6 @@ Homestead.json
 Homestead.yaml
 .env
 /.vscode
+/.phpintel
+.phpintel/
+/.phpintel/

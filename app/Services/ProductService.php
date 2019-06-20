@@ -6,15 +6,23 @@ use App\Contracts\IProduct;
 use App\Product;
 class ProductService implements IProduct
 {
-    
+    private $_Product;
+
+    public function __construct(Product $products)
+    {
+        $this->_Product = $products;
+    }
+
     public function all()
     {
-        return Product::all();
+        return $this->_Product::all();
     }
 
     public function show($id)
     {
-        return Product::find($id);
+        return $this->_Product::find($id);
+        // firstOrFail =>Exception | For API
+        #return $this->_Product::findOrFail($id);
     }
 
     public function getByCategory($id)
