@@ -18,7 +18,11 @@ class ProductController extends Controller
 
     public function index()
     {
-        return $this->_products->all();// return all products
+        $_products = $this->_products->all();
+        if ($_products->isEmpty()) {
+            return response()->json(['error'=> 'not found data'], 404, []);
+        }
+        return response()->json($_products, 200);
     }
 
     public function show($id)

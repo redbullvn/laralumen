@@ -15,7 +15,7 @@ class ProductService implements IProduct
 
     public function all()
     {
-        return $this->_Product::all();
+        return $this->_Product::paginate(5);
     }
 
     public function show($id)
