@@ -60,11 +60,15 @@ $app->singleton(
 // $app->middleware([
 //     App\Http\Middleware\ExampleMiddleware::class
 // ]);
-
+/*********************************************************************
+ * My Route Middleware
+ * *******************************************************************
+ */
 $app->routeMiddleware([
     // 'auth' => App\Http\Middleware\Authenticate::class,
     'api-json' => App\Http\Middleware\JsonRequestMiddleware::class
 ]);
+
 if (env('APP_DEBUG')) {
  $app->register(Barryvdh\Debugbar\LumenServiceProvider::class);
 }
@@ -85,13 +89,11 @@ $app->register(App\Providers\AppServiceProvider::class);
 // $app->register(App\Providers\AuthServiceProvider::class);
 // $app->register(App\Providers\EventServiceProvider::class);
 
-#@@ 
-/*
-|--------------------------------------------------------------------------
-| My Register Service Providers
-|--------------------------------------------------------------------------
-|
-*/
+/*********************************************************************
+ * My Register Service Providers
+ * *******************************************************************
+ *
+ */
 $app->register(App\Providers\ProductServiceProvider::class);
 
 /*

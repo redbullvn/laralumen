@@ -17,7 +17,7 @@ class Product extends Model
 
     # Where fields enable for insert 
     //protected $fillable = [];
-
+    protected $guarded = [];
     public function category()
     {
         return $this->belongsTo('App\Category');

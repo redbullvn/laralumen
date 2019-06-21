@@ -2,9 +2,10 @@
 
 namespace App\Services;
 
+use App\Contracts\IEloquentContractModel;
 use App\Contracts\IProduct;
 use App\Product;
-class ProductService implements IProduct
+class ProductService implements IProduct, IEloquentContractModel
 {
     private $_Product;
 
@@ -47,5 +48,20 @@ class ProductService implements IProduct
         #@case 2: EagerLoading __> with
         // get all products & get info parent, ex: belongTo cate_name|cate
         return Product::with('category')->where('category_id', '=', $id)->get();
+    }
+
+    public function create($request)
+    {
+        return $this->_Product::create($request);
+    }
+
+    public function edit($id)
+    {
+        // TODO: Implement edit() method.
+    }
+
+    public function delete($id)
+    {
+        // TODO: Implement delete() method.
     }
 }

@@ -38,4 +38,12 @@ class ProductController extends Controller
     {
         return $this->_products->getByCategory($cate_id);
     }
+
+    public function create()
+    {
+        $request = $this->_req->json()->all();
+        $new = $this->_products->create($request);
+
+        return response()->json([$new], 201);
+    }
 }
