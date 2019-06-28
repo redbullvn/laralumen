@@ -25,3 +25,27 @@ To get working I had to add both:
 DEBUGBAR_ENABLED=true to .env
 Change config.debugbar.collectors.auth to false
 ```
+### required package for Edu
+```
+{
+    "require": {
+        "php": "^7.1.3",
+        "barryvdh/laravel-cors": "^0.11.0",
+        "canducci/zipcode": "1.1",
+        "fideloper/proxy": "^4.0",
+        "guzzlehttp/guzzle": "5.3.2",
+        "illuminate/contracts": "5.8.",
+        "illuminate/filesystem": "^5.8",
+        "illuminate/support": "5.8.",
+        "laravel/framework": "5.8.*",
+        "laravel/tinker": "^1.0",
+        "mdanter/ecc": "^0.5.2",
+        "phpseclib/phpseclib": "^2.0",
+        "spatie/laravel-permission": "^2.12",
+        "symfony/finder": "^4.2",
+        "tymon/jwt-auth": "^1.0"   -->  //@ add new
+    }
+}
+```
+#### run jwt . create key secret 
+`bash php artisan jwt:secret`
