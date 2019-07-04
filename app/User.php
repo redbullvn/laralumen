@@ -20,6 +20,7 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
      */
     protected $fillable = [
         'name', 'email',
+        'password', 'hide', 'api_token', 'email_verified_at', 'remember_token'
     ];
 
     /**

@@ -97,6 +97,7 @@ $app->register(Tymon\JWTAuth\Providers\LumenServiceProvider::class);
  *
  */
 $app->register(App\Providers\ProductServiceProvider::class);
+$app->register(App\Providers\UserApiServiceProvider::class);
 
 /*
 |--------------------------------------------------------------------------

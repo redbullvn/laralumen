@@ -30,8 +30,11 @@ $router->group(['prefix' => 'api/v1', 'middleware' => 'api-json'], function() us
 
 
     // group for modules
-    $router->group(['prefix' => 'c'], function () use ($router) {
-        $router->get('about', ['uses'=> 'AboutController@test', 'as'=> 'about.test']);
+    $router->group(['prefix' => 'user'], function () use ($router) {
+        $router->post('create', ['uses'=> 'UserController@create', 'as'=> 'user.create']);
     });
 
 });
+
+//Route:test
+$router->get('gf', ['uses'=> 'UserController@create', 'as'=> 'user.create']);
