@@ -11,7 +11,7 @@ namespace App\Contracts;
 
 interface IUser
 {
-    public function getAll();
+
     public function rulesCreate();
 
 }

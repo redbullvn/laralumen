@@ -14,7 +14,7 @@ class ProductService implements IProduct, IEloquentContractModel
         $this->_Product = $products;
     }
 
-    public function all()
+    public function index()
     {
         return $this->_Product::paginate(5);
     }
@@ -50,18 +50,18 @@ class ProductService implements IProduct, IEloquentContractModel
         return Product::with('category')->where('category_id', '=', $id)->get();
     }
 
-    public function create($request)
+    public function store($request)
     {
         return $this->_Product::create($request);
     }
 
-    public function edit($id)
+    public function update($id)
     {
-        // TODO: Implement edit() method.
+        // TODO: Implement update() method.
     }
 
-    public function delete($id)
+    public function destroy($id)
     {
-        // TODO: Implement delete() method.
+        // TODO: Implement destroy() method.
     }
 }

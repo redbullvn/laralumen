@@ -26,12 +26,12 @@ $router->group(['prefix' => 'api/v1', 'middleware' => 'api-json'], function() us
     // group for modules PRODUCTS
     $router->get('products', ['uses'=> 'ProductController@index', 'as'=> 'product.index']);
     $router->get('product/{id}', ['uses'=> 'ProductController@show', 'as'=> 'product.show']);
-    $router->post('product/create', ['uses'=> 'ProductController@create', 'as'=> 'product.create']);
+    $router->post('product/create', ['uses'=> 'ProductController@store', 'as'=> 'product.store']);
 
 
     // group for modules
     $router->group(['prefix' => 'user'], function () use ($router) {
-        $router->post('create', ['uses'=> 'UserController@create', 'as'=> 'user.create']);
+        $router->post('create', ['uses'=> 'UserController@store', 'as'=> 'user.store']);
     });
 
 });

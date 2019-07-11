@@ -11,7 +11,9 @@ namespace App\Contracts;
 
 interface IEloquentContractModel
 {
-    public function create($request);
-    public function edit($id);
-    public function delete($id);
+    public function index(); // get all
+    public function store($request); // create
+    public function update($request);
+    public function show($id); // get detail
+    public function destroy($id);
 }

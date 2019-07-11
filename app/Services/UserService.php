@@ -22,26 +22,31 @@ class UserService implements IEloquentContractModel, IUser
         $this->_User = $user;
     }
 
-    public function create($request)
+    public function store($request)
     {
         // TODO: create
         //return $request;
         return $this->_User::create($request);
     }
 
-    public function edit($id)
+    public function update($id)
     {
         // TODO: Implement edit() method.
     }
 
-    public function delete($id)
+    public function destroy($id)
     {
         // TODO: Implement delete() method.
     }
 
-    public function getAll()
+    public function index()
     {
         return ['all Users'];
+    }
+
+    public function show($id)
+    {
+
     }
 
     public function rulesCreate()

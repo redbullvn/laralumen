@@ -18,7 +18,7 @@ class ProductController extends Controller
 
     public function index()
     {
-        $_products = $this->_products->all();
+        $_products = $this->_products->index();
         if ($_products->isEmpty()) {
             return response()->json(['error'=> 'not found data'], 404, []);
         }
@@ -39,10 +39,10 @@ class ProductController extends Controller
         return $this->_products->getByCategory($cate_id);
     }
 
-    public function create()
+    public function store()
     {
         $request = $this->_req->json()->all();
-        $new = $this->_products->create($request);
+        $new = $this->_products->store($request);
 
         return response()->json([$new], 201);
     }

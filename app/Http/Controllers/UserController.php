@@ -19,7 +19,7 @@ class UserController extends Controller
         $this->_req = $request;
     }
 
-    public function create()
+    public function store()
     {
         $userInfo = $this->_req->json()->all();
         $userInfo = array_map('trim', $userInfo);
@@ -30,7 +30,7 @@ class UserController extends Controller
         }
 
         # create users
-        $user = $this->_user->create([
+        $user = $this->_user->store([
             'name' =>$userInfo['name'],
             'email' => $userInfo['email'],
             'password' => Hash::make($userInfo['password']),
