@@ -46,4 +46,13 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
     {
         return 'hello';
     }
+
+    public function rulesCreate()
+    {
+        return [
+            'name' => 'required',
+            'email' => 'required|unique:users',
+            'password' => 'required|min:6',
+        ];
+    }
 }

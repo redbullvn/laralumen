@@ -22,14 +22,11 @@ class UserController extends Controller
     public function create()
     {
         $userInfo = $this->_req->json()->all();
-        $validator = Validator::make($userInfo, [
-            'name' => 'required|integer',
-            'email' => 'required|unique:users',
-            'password' => 'required|min:15',
-        ]);
+        $userInfo = array_map('trim', $userInfo);
+        $validator = Validator::make($userInfo, $this->_user->rulesCreate());
 
         if ($validator->fails()) {
-            return response()->json(getErrorValidatorForJsonResponse($validator), 422); // 422 UnProcessable Entity
+            return response()->json(parseErrToJson($validator), 422); // 422 UnProcessable Entity
         }
 
         # create users
@@ -38,11 +35,13 @@ class UserController extends Controller
             'email' => $userInfo['email'],
             'password' => Hash::make($userInfo['password']),
             'api_token' => Str::random(60),
-            'hide' => false,
+            'hide' => 0,
         ]);
 
-        if ($user) {
-            // TODO: here
+        if ( ! $user) {
+            return response()->json(['error' => 'ERR: create fails'], 409);
         }
+
+        return response()->json([$user], 201);
     }
 }

@@ -25,7 +25,7 @@ class UserService implements IEloquentContractModel, IUser
     public function create($request)
     {
         // TODO: create
-        return $request;
+        //return $request;
         return $this->_User::create($request);
     }
 
@@ -42,5 +42,10 @@ class UserService implements IEloquentContractModel, IUser
     public function getAll()
     {
         return ['all Users'];
+    }
+
+    public function rulesCreate()
+    {
+        return $this->_User->rulesCreate();
     }
 }
